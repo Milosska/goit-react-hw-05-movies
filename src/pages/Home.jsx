@@ -5,9 +5,14 @@ import { MovieList } from '../components/MovieList/MovieList';
 const Home = ({ genres }) => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    fetchAPI('trends')
+    const abortController = new AbortController();
+    fetchAPI('trends', abortController.signal)
       .then(({ data: { results } }) => setMovies(results))
-      .catch(error => console.error(error));
+      .catch(error => console.log(error));
+
+    return () => {
+      abortController.abort();
+    };
   }, []);
   return (
     <>

@@ -12,11 +12,13 @@ import Reviews from './Reviews/Reviews';
 
 export const App = () => {
   const [genres, setGenres] = useState([]);
+
   useEffect(() => {
     fetchAPI('genres')
       .then(({ data: { genres } }) => setGenres(genres))
       .catch(error => console.error(error));
   }, []);
+
   return (
     <>
       <GlobalStyles />

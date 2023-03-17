@@ -13,9 +13,11 @@ const ENDPOINTS = {
 
 // const BASEIMGURL = 'https://image.tmdb.org/t/p/w500';
 
-export const fetchAPI = async endpoint => {
+export const fetchAPI = async (endpoint, controllerSignal) => {
   try {
-    const response = await axios.get(`${BASE_URL}${ENDPOINTS[endpoint]}`);
+    const response = await axios.get(`${BASE_URL}${ENDPOINTS[endpoint]}`, {
+      signal: controllerSignal,
+    });
     // console.log(response);
     return response;
   } catch (error) {
