@@ -20,26 +20,50 @@ export const Header = styled.header`
 `;
 
 export const Container = styled.div`
+  padding: 0 15px;
+
+  @media (min-width: 768px) {
+    padding: 0 30px;
+  }
+`;
+
+export const HeaderThumb = styled.div`
   display: flex;
+  gap: 30%;
   align-items: center;
-  padding: 0 30px;
+
+  @media (min-width: 768px) {
+    gap: 35vw;
+  }
 `;
 
 export const Logo = styled(SiThemoviedatabase)`
   display: block;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
+
+  @media (min-width: 1200px) {
+    width: 70px;
+    height: 70px;
+  }
 `;
 
 export const LogoLink = styled(NavLink)`
   display: block;
-  padding-left: 20px;
+  padding-left: 10px;
+
+  @media (min-width: 1200px) {
+    padding-left: 20px;
+  }
 `;
 
 export const Navigation = styled.nav`
   display: flex;
-  gap: 50px;
-  padding-left: 500px;
+  gap: 20px;
+
+  @media (min-width: 1200px) {
+    gap: 50px;
+  }
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -70,5 +94,6 @@ export const Footer = styled.footer`
 
 export const FooterContainer = styled.div`
   text-align: center;
-  padding: 20px 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;

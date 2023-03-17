@@ -4,18 +4,18 @@ import styled from 'styled-components';
 export const Card = styled(NavLink)`
   position: relative;
   display: block;
-  width: 650px;
-  height: 300px;
+  width: 90vw;
+  max-height: 400px;
   overflow: hidden;
-  padding: 20px 30px;
+  padding: 10px 30px;
 
-  background-size: contain, 80% 100%;
+  background-size: contain, 100% 60%;
   background-repeat: no-repeat;
   background-image: linear-gradient(
-      to right,
+      to bottom,
       rgba(102, 80, 165, 0.5) 0%,
-      rgba(0, 0, 0, 0.6) 50%,
-      rgba(0, 0, 0, 0.95) 80%,
+      rgba(0, 0, 0, 0.6) 20%,
+      rgba(0, 0, 0, 0.95) 60%,
       rgba(0, 0, 0, 1) 100%
     ),
     ${card => {
@@ -53,34 +53,90 @@ export const Card = styled(NavLink)`
       transform: translateX(0);
     }
   }
+
+  @media (min-width: 480px) {
+    padding: 20px 30px;
+
+    background-size: contain, 100% 100%;
+  }
+
+  @media (min-width: 768px) {
+    width: 650px;
+    height: 300px;
+    padding: 20px 30px;
+
+    background-size: contain, 80% 100%;
+    background-image: linear-gradient(
+        to right,
+        rgba(102, 80, 165, 0.5) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        rgba(0, 0, 0, 0.95) 80%,
+        rgba(0, 0, 0, 1) 100%
+      ),
+      ${card => {
+        if (!card.bdimage) {
+          return;
+        }
+        return `url(https://image.tmdb.org/t/p/w500${card.bdimage})`;
+      }};
+  }
+
+  @media (min-width: 1200px) {
+    width: 40vw;
+    min-height: 300px;
+  }
+
+  @media (min-width: 1900px) {
+    width: 30vw;
+    min-height: 300px;
+  }
 `;
 
 export const TextContainer = styled.div`
-  width: 50%;
-  margin-left: auto;
+  margin-top: 100px;
 
   font-family: 'Montserrat';
   font-weight: 500;
   color: #ffffff;
+
+  @media (min-width: 768px) {
+    width: 50%;
+    margin-top: 0;
+    margin-left: auto;
+  }
 `;
 
 export const Title = styled.h3`
   margin-bottom: 5px;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 18px;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 22px;
+  }
 `;
 
 export const Genres = styled.p`
   margin-bottom: 10px;
+  font-size: 14px;
   color: rgb(195, 173, 255);
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const Description = styled.p`
   max-height: 170px;
   overflow: auto;
+  font-size: 14px;
 
   ::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 18px;
   }
 `;
