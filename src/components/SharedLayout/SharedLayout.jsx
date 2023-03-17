@@ -1,20 +1,37 @@
 import { Outlet } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import {
+  Container,
+  Header,
+  StyledLink,
+  LogoLink,
+  Logo,
+  Navigation,
+  Footer,
+  FooterContainer,
+} from './SharedLayout.styled';
 
 export const SharedLayout = () => {
   return (
-    <div>
-      <header>
-        <nav>
-          <NavLink to="/">Logo</NavLink>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/movies">Movies</NavLink>
-        </nav>
-      </header>
+    <>
+      <Header>
+        <Container>
+          <LogoLink to="/">
+            <Logo />
+          </LogoLink>
+          <Navigation>
+            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/movies">Movies</StyledLink>
+          </Navigation>
+        </Container>
+      </Header>
       <main>
         <Outlet />
       </main>
-      <footer>Footer</footer>
-    </div>
+      <Footer>
+        <FooterContainer>
+          <p>&#169; 2023 Milosska - GoIT-react-project. All rights reserved</p>
+        </FooterContainer>
+      </Footer>
+    </>
   );
 };
