@@ -2,16 +2,17 @@ import axios from 'axios';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const TOKEN = '3a4b55e473acc4104e59f0b7ff241ada';
-const ENDPOINTS = {
-  trends: `/trending/movie/day?api_key=${TOKEN}`,
-  query: '/search/search-movies',
-  movie: '/movies/get-movie-details',
-  cast: '/movies/get-movie-credits',
-  reviews: '/movies/get-movie-reviews',
-  genres: `/genre/movie/list?api_key=${TOKEN}&language=en-US`,
-};
 
-export const fetchAPI = async (endpoint, controllerSignal) => {
+export const fetchAPI = async (endpoint, controllerSignal, ...params) => {
+  const ENDPOINTS = {
+    trends: `/trending/movie/day?api_key=${TOKEN}`,
+    query: '/search/search-movies',
+    movie: '/movies/get-movie-details',
+    cast: '/movies/get-movie-credits',
+    reviews: '/movies/get-movie-reviews',
+    genres: `/genre/movie/list?api_key=${TOKEN}&language=en-US`,
+  };
+
   try {
     const response = await axios.get(`${BASE_URL}${ENDPOINTS[endpoint]}`, {
       signal: controllerSignal,

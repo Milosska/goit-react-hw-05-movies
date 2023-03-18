@@ -7,6 +7,7 @@ import {
   LogoLink,
   Logo,
   Navigation,
+  Main,
   Footer,
   FooterContainer,
 } from './SharedLayout.styled';
@@ -27,11 +28,11 @@ export const SharedLayout = () => {
           </HeaderThumb>
         </Container>
       </Header>
-      <main>
+      <Main>
         <Container>
           <Outlet />
         </Container>
-      </main>
+      </Main>
       <Footer>
         <Container>
           <FooterContainer>

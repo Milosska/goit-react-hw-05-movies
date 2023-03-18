@@ -19,10 +19,37 @@ const Home = ({ genres }) => {
       abortController.abort();
     };
   }, []);
+
+  // Endless scroll
+
+  const handleScroll = (entries, observer) => {
+    entries.forEach(entry => {
+      console.log(entry.isIntersecting);
+      // if (entry.isIntersecting) {
+      //   console.log('Hello!');
+      // }
+    });
+  };
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+  };
+  let observer = new IntersectionObserver(handleScroll, observerOptions);
+
+  const handleObserver = ref => {
+    observer.observe(ref);
+  };
+
   return (
     <>
       {isLoading && <Loader />}
-      <MovieList movies={movies} genres={genres} />
+      <MovieList
+        movies={movies}
+        genres={genres}
+        handleObserver={handleObserver}
+      />
     </>
   );
 };

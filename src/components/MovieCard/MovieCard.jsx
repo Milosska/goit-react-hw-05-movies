@@ -27,7 +27,15 @@ export const MovieCard = ({
 };
 
 MovieCard.propTypes = {
-  movie: PropTypes.object.isRequired,
+  movie: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    overview: PropTypes.string,
+    genre_ids: PropTypes.arrayOf(PropTypes.number),
+    release_date: PropTypes.string,
+    backdrop_path: PropTypes.string,
+  }).isRequired,
+  genres: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 // https://codepen.io/ryanparag/pen/oWrLPr?editors=1100

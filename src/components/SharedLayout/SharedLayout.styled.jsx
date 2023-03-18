@@ -87,6 +87,10 @@ export const StyledLink = styled(NavLink)`
   }
 `;
 
+export const Main = styled.main`
+  min-height: 80vh;
+`;
+
 export const Footer = styled.footer`
   background-color: #161214;
   color: #ffffff;
