@@ -5,51 +5,39 @@ import { Loader } from '../components/Loader/Loader';
 
 const Home = ({ genres }) => {
   const [movies, setMovies] = useState([]);
+  const [page, setPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+
+  console.log(page);
+
   useEffect(() => {
+    if (page === 0) {
+      return;
+    }
+
     setIsLoading(true);
 
     const abortController = new AbortController();
-    fetchAPI('trends', abortController.signal)
-      .then(({ data: { results } }) => setMovies(results))
+    fetchAPI('trends', abortController.signal, page)
+      .then(({ data: { results } }) =>
+        page === 1
+          ? setMovies([...results])
+          : setMovies(prevState => [...prevState, ...results])
+      )
       .catch(error => console.log(error))
-      .finally(setIsLoading(false));
+      .finally(() => setIsLoading(false));
 
     return () => {
       abortController.abort();
     };
-  }, []);
+  }, [page]);
 
-  // Endless scroll
-
-  const handleScroll = (entries, observer) => {
-    entries.forEach(entry => {
-      console.log(entry.isIntersecting);
-      // if (entry.isIntersecting) {
-      //   console.log('Hello!');
-      // }
-    });
-  };
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.5,
-  };
-  let observer = new IntersectionObserver(handleScroll, observerOptions);
-
-  const handleObserver = ref => {
-    observer.observe(ref);
-  };
+  console.log(movies);
 
   return (
     <>
       {isLoading && <Loader />}
-      <MovieList
-        movies={movies}
-        genres={genres}
-        handleObserver={handleObserver}
-      />
+      <MovieList movies={movies} genres={genres} setPage={setPage} />
     </>
   );
 };

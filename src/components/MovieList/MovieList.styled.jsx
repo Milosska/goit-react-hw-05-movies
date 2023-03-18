@@ -13,3 +13,14 @@ export const List = styled.ul`
     gap: 50px;
   }
 `;
+
+export const ObserverDiv = styled.div`
+  position: absolute;
+  bottom: 80px;
+  width: 95%;
+  height: 350px;
+
+  @media (min-width: 768px) {
+    bottom: 60px;
+  }
+`;

@@ -1,25 +1,60 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { List } from './MovieList.styled';
+import { List, ObserverDiv } from './MovieList.styled';
 import { MovieCard } from '../MovieCard/MovieCard';
 
-export const MovieList = ({ movies, genres, handleObserver }) => {
-  const movieListRef = useRef();
+export const MovieList = ({ movies, genres, setPage }) => {
+  const observerRef = useRef();
 
-  if (movieListRef.current) {
-    handleObserver(movieListRef.current);
-  }
+  useEffect(() => {
+    // Endless scroll
+
+    const observerElem = observerRef.current;
+
+    // if (!movies) {
+    //   return;
+    // }
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    let observer = new IntersectionObserver(handleScroll, observerOptions);
+
+    if (observerElem) {
+      observer.observe(observerElem);
+    }
+
+    function handleScroll(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setPage(prevState => prevState + 1);
+          return;
+        }
+      });
+
+      window.scrollBy(0, -100);
+    }
+
+    return () => {
+      observer.unobserve(observerElem);
+    };
+  }, [setPage]);
 
   return (
-    <List ref={movieListRef}>
-      {movies.map(movie => {
-        return (
-          <li key={movie.id}>
-            <MovieCard movie={movie} genres={genres} />
-          </li>
-        );
-      })}
-    </List>
+    <>
+      <List>
+        {movies.map(movie => {
+          return (
+            <li key={movie.id}>
+              <MovieCard movie={movie} genres={genres} />
+            </li>
+          );
+        })}
+      </List>
+      <ObserverDiv ref={observerRef}></ObserverDiv>
+    </>
   );
 };
 

@@ -5,6 +5,9 @@ export const Backdrop = styled.div`
   position: fixed;
   top: 10vh;
   left: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80vw;
   height: 80vh;
   z-index: 10;
@@ -13,18 +16,21 @@ export const Backdrop = styled.div`
 `;
 
 export const Thumb = styled.div`
-  position: relative;
-  top: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Icon = styled(MdMovieFilter)`
+  display: inline-block;
   width: 100px;
   height: 100px;
   color: #38bbd8;
 
   @media (min-width: 1200px) {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
   }
 `;
 
@@ -33,7 +39,6 @@ export const TextThumb = styled.div`
   gap: 5px;
   align-items: baseline;
   width: 200px;
-  margin: 0 auto;
 
   @media (min-width: 1200px) {
     gap: 20px;
@@ -58,7 +63,6 @@ export const Text = styled.p`
 export const Spinner = styled.div`
   display: flex;
   width: 150px;
-  height: 100px;
 
   @media (min-width: 1200px) {
     width: 200px;

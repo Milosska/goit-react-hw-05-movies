@@ -13,7 +13,7 @@ export const MovieCard = ({
   movie: { id, title, overview, genre_ids, release_date, backdrop_path },
 }) => {
   return (
-    <Card to={`movies/${id}`} bdimage={backdrop_path}>
+    <Card to={`/movies/${id}`} bdimage={backdrop_path}>
       <TextContainer>
         <Title>{title}</Title>
         <Genres>
