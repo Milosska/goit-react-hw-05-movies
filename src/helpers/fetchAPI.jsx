@@ -19,6 +19,11 @@ export const fetchAPI = async (endpoint, controllerSignal) => {
     // console.log(response);
     return response;
   } catch (error) {
+    if (axios.isCancel) {
+      console.log('Request canceled');
+      return;
+    }
+
     console.error(error);
   }
 };
