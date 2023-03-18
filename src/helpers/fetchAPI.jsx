@@ -11,8 +11,6 @@ const ENDPOINTS = {
   genres: `/genre/movie/list?api_key=${TOKEN}&language=en-US`,
 };
 
-// const BASEIMGURL = 'https://image.tmdb.org/t/p/w500';
-
 export const fetchAPI = async (endpoint, controllerSignal) => {
   try {
     const response = await axios.get(`${BASE_URL}${ENDPOINTS[endpoint]}`, {

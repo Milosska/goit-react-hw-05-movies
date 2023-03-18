@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

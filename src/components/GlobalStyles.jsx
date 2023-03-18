@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
     
     body {
+      position: relative;
   margin: 0;
   font-family: Roboto, sans-serif;
   color: #212121;
