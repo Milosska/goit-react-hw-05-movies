@@ -11,9 +11,6 @@ export const MovieList = ({ movies, genres, setPage }) => {
 
     const observerElem = observerRef.current;
 
-    // if (!movies) {
-    //   return;
-    // }
     const observerOptions = {
       root: null,
       rootMargin: '0px',

@@ -3,13 +3,13 @@ import { MdMovieFilter } from 'react-icons/md';
 
 export const Backdrop = styled.div`
   position: fixed;
-  top: 10vh;
-  left: 10vw;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80vw;
-  height: 80vh;
+  width: 100vw;
+  height: 100vh;
   z-index: 10;
   background-color: rgba(102, 80, 165, 0.75);
   text-align: center;
