@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Form, Input, Icon, Button } from './SearchBar.styled';
 
-export const SearchBar = ({ handleSubmit }) => {
+export const SearchBar = ({ handleSubmit, setSearchParams }) => {
   const [searchValue, setSearchValue] = useState('');
 
   const handleSearchState = e => {
-    setSearchValue(e.target.value.trim());
+    const currentQuery = e.target.value.trim();
+    setSearchValue(currentQuery);
+    setSearchParams(currentQuery !== '' ? { query: currentQuery } : {});
   };
   return (
     <Form autoComplete="off" onSubmit={handleSubmit}>
@@ -21,4 +24,8 @@ export const SearchBar = ({ handleSubmit }) => {
       />
     </Form>
   );
+};
+
+SearchBar.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
 };

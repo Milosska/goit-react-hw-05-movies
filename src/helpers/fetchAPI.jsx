@@ -7,7 +7,7 @@ export const fetchAPI = async (endpoint, controllerSignal, ...params) => {
   const ENDPOINTS = {
     trends: `/trending/movie/day?api_key=${TOKEN}&page=${params[0]}`,
     query: `/search/movie?api_key=${TOKEN}&page=${params[0]}&query=${params[1]}`,
-    movie: '/movies/get-movie-details',
+    movie: `/movie/${params[0]}?api_key=${TOKEN}&language=en-US`,
     cast: '/movies/get-movie-credits',
     reviews: '/movies/get-movie-reviews',
     genres: `/genre/movie/list?api_key=${TOKEN}&language=en-US`,
@@ -17,7 +17,7 @@ export const fetchAPI = async (endpoint, controllerSignal, ...params) => {
     const response = await axios.get(`${BASE_URL}${ENDPOINTS[endpoint]}`, {
       signal: controllerSignal,
     });
-    // console.log(response);
+    console.log(response);
     return response;
   } catch (error) {
     if (axios.isCancel) {

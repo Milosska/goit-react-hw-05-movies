@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 import { forParseGenres } from '../../helpers/fetchAPI';
 import {
   Card,
@@ -12,8 +13,13 @@ export const MovieCard = ({
   genres,
   movie: { id, title, overview, genre_ids, release_date, backdrop_path },
 }) => {
+  const location = useLocation();
   return (
-    <Card to={`/movies/${id}`} bdimage={backdrop_path}>
+    <Card
+      to={`/movies/${id}`}
+      state={{ from: location }}
+      bdimage={backdrop_path}
+    >
       <TextContainer>
         <Title>{title}</Title>
         <Genres>

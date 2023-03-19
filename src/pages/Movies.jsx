@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { fetchAPI } from '../helpers/fetchAPI';
 import { SearchBar } from '../components/SearchBar/SearchBar';
 import { MovieList } from '../components/MovieList/MovieList';
@@ -7,7 +8,9 @@ import { ButtonUp } from '../components/ButtonUp/ButtonUp';
 import { ErrorMessage } from '../components/ErrorMessage/ErrorMessage';
 
 const Movies = ({ genres }) => {
-  const [query, setQuery] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const [query, setQuery] = useState(() => searchParams.get('query') || '');
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -47,7 +50,10 @@ const Movies = ({ genres }) => {
   return (
     <>
       {isLoading && <Loader />}
-      <SearchBar handleSubmit={handleSubmit} />
+      <SearchBar
+        handleSubmit={handleSubmit}
+        setSearchParams={setSearchParams}
+      />
       {movies && !isError && (
         <MovieList movies={movies} genres={genres} setPage={setPage} />
       )}

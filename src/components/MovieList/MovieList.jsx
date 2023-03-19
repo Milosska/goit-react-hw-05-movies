@@ -57,4 +57,5 @@ export const MovieList = ({ movies, genres, setPage }) => {
 
 MovieList.propTypes = {
   movies: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setPage: PropTypes.func.isRequired,
 };
