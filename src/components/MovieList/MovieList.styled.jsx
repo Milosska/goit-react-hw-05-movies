@@ -17,6 +17,7 @@ export const List = styled.ul`
 export const ObserverDiv = styled.div`
   position: absolute;
   bottom: 80px;
+  z-index: -1;
   width: 95%;
   height: 350px;
 

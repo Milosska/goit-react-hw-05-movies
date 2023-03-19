@@ -2,13 +2,12 @@ import { useState, useEffect } from 'react';
 import { fetchAPI } from '../helpers/fetchAPI';
 import { MovieList } from '../components/MovieList/MovieList';
 import { Loader } from '../components/Loader/Loader';
+import { ButtonUp } from '../components/ButtonUp/ButtonUp';
 
 const Home = ({ genres }) => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-
-  console.log(page);
 
   useEffect(() => {
     if (page === 0) {
@@ -32,11 +31,10 @@ const Home = ({ genres }) => {
     };
   }, [page]);
 
-  console.log(movies);
-
   return (
     <>
       {isLoading && <Loader />}
+      {window.pageYOffset > 500 && <ButtonUp />}
       <MovieList movies={movies} genres={genres} setPage={setPage} />
     </>
   );
