@@ -17,7 +17,7 @@ export const fetchAPI = async (endpoint, controllerSignal, ...params) => {
     const response = await axios.get(`${BASE_URL}${ENDPOINTS[endpoint]}`, {
       signal: controllerSignal,
     });
-    console.log(response);
+    // console.log(response);
     return response;
   } catch (error) {
     if (axios.isCancel) {

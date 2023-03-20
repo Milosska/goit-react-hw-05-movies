@@ -1,10 +1,5 @@
 import { Link } from 'react-router-dom';
-import {
-  BsFillArrowLeftCircleFill,
-  BsFillPeopleFill,
-  BsFillStarFill,
-  BsFillCameraReelsFill,
-} from 'react-icons/bs';
+import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import styled from 'styled-components';
 import * as placeholder from '../../images/movie-placeholder-min.jpg';
 
@@ -102,7 +97,7 @@ export const Genres = styled.p`
 `;
 
 export const Description = styled.p`
-  margin-top: 20px;
+  margin: 20px 0;
   font-size: 18px;
 
   ::-webkit-scrollbar {
@@ -110,40 +105,42 @@ export const Description = styled.p`
   }
 `;
 
-export const StatisticContainer = styled.div`
-  display: flex;
-  gap: 25px;
-  margin-top: 20px;
-`;
-
-export const StatContainer = styled.div`
-  display: flex;
+export const AddLink = styled(Link)`
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
   align-items: center;
   gap: 15px;
-  padding: 10px 0;
+  margin-top: 30px;
+  padding: 5px 20px;
+  border: 2px solid rgb(195, 173, 255);
+  border-radius: 25px;
+  font-size: 22px;
+  background-color: transparent;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  :hover,
+  :focus {
+    border: 2px solid rgb(102, 80, 165);
+    background-color: rgb(102, 80, 165);
+  }
 `;
 
-export const PopularityIcon = styled(BsFillPeopleFill)`
-  width: 50px;
-  height: 50px;
+export const CastLink = styled(AddLink)`
+  margin-right: 50px;
 `;
 
-export const StarIcon = styled(BsFillStarFill)`
-  width: 50px;
-  height: 50px;
-`;
+export const ArrowIcon = styled(BsFillArrowLeftCircleFill)`
+  position: relative;
+  width: 30px;
+  height: 30px;
+  rotate: 180deg;
 
-export const CameraIcon = styled(BsFillCameraReelsFill)`
-  width: 50px;
-  height: 50px;
-`;
+  transform: translateX(500%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-export const StatText = styled.p`
-  font-size: 18px;
-`;
-
-export const StatData = styled.span`
-  display: block;
-  margin-top: 5px;
-  font-weight: 700;
+  ${AddLink}:hover &, ${AddLink}:focus & {
+    transform: translateX(0);
+  }
 `;
