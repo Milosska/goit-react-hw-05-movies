@@ -9,6 +9,7 @@ import {
   Title,
   Genres,
   Description,
+  LinkThumb,
   AddLink,
   CastLink,
   ArrowIcon,
@@ -58,12 +59,16 @@ export const MovieInfo = ({
           status={status}
         />
         <CompaniesList companies={production_companies} />
-        <CastLink to={'cast'}>
-          Cast <ArrowIcon />
-        </CastLink>
-        <AddLink to={'reviews'}>
-          Reviews <ArrowIcon />
-        </AddLink>
+        <LinkThumb>
+          <CastLink to={'cast'}>
+            <ArrowIcon />
+            Cast
+          </CastLink>
+          <AddLink to={'reviews'}>
+            <ArrowIcon />
+            Reviews
+          </AddLink>
+        </LinkThumb>
       </TextContainer>
     </BgContainer>
   );

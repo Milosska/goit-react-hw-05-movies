@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   gap: 10px;
-  width: 500px;
+  width: 300px;
   max-height: 280px;
   margin-top: 20px;
   padding: 10px 20px;
@@ -29,8 +29,8 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  column-gap: 30px;
-  max-height: 280px;
+  column-gap: 10px;
+  max-height: 200px;
   list-style: none;
   margin: 0;
   padding: 0 10px;

@@ -14,6 +14,9 @@ import {
 } from './CompaniesList.styled';
 
 export const CompaniesList = ({ companies }) => {
+  const [prodCompanies] = useState(() => {
+    return companies.length > 9 ? companies.slice(0, 8) : companies;
+  });
   const [isClose, setIsClose] = useState(true);
   const listRef = useRef();
   const containerRef = useRef();
@@ -35,7 +38,9 @@ export const CompaniesList = ({ companies }) => {
 
     const liElems = listRef.current.children;
     // List width animation
-    if (liElems.length > 4) {
+    if (liElems.length > 6) {
+      containerRef.current.style.width = isClose ? '1000px' : '500px';
+    } else if (liElems.length > 3) {
       containerRef.current.style.width = isClose ? '800px' : '500px';
     }
 
@@ -55,28 +60,32 @@ export const CompaniesList = ({ companies }) => {
   };
 
   return (
-    <Container ref={containerRef}>
-      <TitleText>Companies:</TitleText>
-      {companies.length ? (
-        <List ref={listRef}>
-          {companies.map(({ logo_path, name, id }) => {
-            return (
-              <ListElem key={id}>
-                <LogoContainer>{getLogo(logo_path)}</LogoContainer>
-                <CompanyName>{name}</CompanyName>
-              </ListElem>
-            );
-          })}
-        </List>
-      ) : (
-        <TitleText>No info about companies</TitleText>
-      )}
+    <>
+      {window.innerWidth > 1199 && (
+        <Container ref={containerRef}>
+          <TitleText>Companies:</TitleText>
+          {prodCompanies.length ? (
+            <List ref={listRef}>
+              {prodCompanies.map(({ logo_path, name, id }) => {
+                return (
+                  <ListElem key={id}>
+                    <LogoContainer>{getLogo(logo_path)}</LogoContainer>
+                    <CompanyName>{name}</CompanyName>
+                  </ListElem>
+                );
+              })}
+            </List>
+          ) : (
+            <TitleText>No info about companies</TitleText>
+          )}
 
-      {companies.length > 1 && (
-        <ArrowBtn type="button" onClick={handleClick}>
-          <ArrowIcon />
-        </ArrowBtn>
+          {companies.length > 1 && (
+            <ArrowBtn type="button" onClick={handleClick}>
+              <ArrowIcon />
+            </ArrowBtn>
+          )}
+        </Container>
       )}
-    </Container>
+    </>
   );
 };

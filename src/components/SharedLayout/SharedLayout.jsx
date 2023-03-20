@@ -29,9 +29,7 @@ export const SharedLayout = () => {
         </Container>
       </Header>
       <Main>
-        <Container>
-          <Outlet />
-        </Container>
+        <Outlet />
       </Main>
       <Footer>
         <Container>
