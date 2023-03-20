@@ -5,11 +5,10 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   gap: 10px;
-  width: 300px;
+  width: 500px;
   max-height: 280px;
   margin-top: 20px;
   padding: 10px 20px;
-  /* background-color: rgba(189, 171, 239, 0.5); */
   border: 2px solid transparent;
   border-radius: 25px;
   transition: border 500ms cubic-bezier(0.4, 0, 0.2, 1);
