@@ -9,6 +9,13 @@ import {
   Title,
   Genres,
   Description,
+  StatisticContainer,
+  StatText,
+  PopularityIcon,
+  StarIcon,
+  CameraIcon,
+  StatData,
+  StatContainer,
 } from './MovieInfo.styled';
 
 export const MovieInfo = ({
@@ -19,6 +26,9 @@ export const MovieInfo = ({
     release_date,
     genres,
     overview,
+    popularity,
+    vote_average,
+    status,
     production_companies,
   },
 }) => {
@@ -46,14 +56,30 @@ export const MovieInfo = ({
           {parseGenres(genres)}
         </Genres>
         <Description>{overview}</Description>
+        <StatisticContainer>
+          <StatContainer>
+            <PopularityIcon />
+            <StatText>
+              Popularity: <StatData>{popularity}</StatData>
+            </StatText>
+          </StatContainer>
+          <StatContainer>
+            <StarIcon />
+            <StatText>
+              Vote average:<StatData>{vote_average}</StatData>
+            </StatText>
+          </StatContainer>
+          <StatContainer>
+            <CameraIcon />
+            <StatText>
+              Status: <StatData>{status}</StatData>
+            </StatText>
+          </StatContainer>
+        </StatisticContainer>
         {/* Set styles from here! */}
         {/* <CompaniesInfo companies={production_companies} /> */}
       </TextContainer>
-      <div>
-        <p>icon /Popularity</p>
-        <p>icon /Vote average</p>
-        <p>icon /Status</p>
-      </div>
+
       <Link to={'cast'}>Cast</Link>
       <Link to={'reviews'}>Reviews</Link>
     </BgContainer>

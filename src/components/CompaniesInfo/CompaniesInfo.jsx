@@ -1,19 +1,29 @@
-import { CompanyLogo } from './CompaniesInfo.styled';
+import {
+  Container,
+  CompanyLogo,
+  LogoPlaceholder,
+} from './CompaniesInfo.styled';
 
 export const CompaniesInfo = ({ companies }) => {
+  const getLogo = (logo, name) =>
+    logo ? (
+      <CompanyLogo
+        src={`https://image.tmdb.org/t/p/original/${logo}`}
+        alt={name}
+      />
+    ) : (
+      <LogoPlaceholder />
+    );
   return (
-    <div>
-      {companies.map(({ logo_path, name }) => {
+    <Container>
+      {companies.map(({ logo_path, name, id }) => {
         return (
-          <>
-            <CompanyLogo
-              src={`https://image.tmdb.org/t/p/original/${logo_path}`}
-              alt={name}
-            />
+          <div key={id}>
+            {getLogo(logo_path)}
             <p>{name}</p>
-          </>
+          </div>
         );
       })}
-    </div>
+    </Container>
   );
 };
