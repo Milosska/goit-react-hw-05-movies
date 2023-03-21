@@ -1,12 +1,10 @@
 import { useLocation } from 'react-router-dom';
 import { CompaniesList } from './CompaniesList/CompaniesList';
 import { StatesInfo } from './StatesInfo/StatesInfo';
+import { BackLink } from './BackLink/BackLink';
 import {
   BgContainer,
   TextContainer,
-  BackLink,
-  BackIcon,
-  BackHoverText,
   Title,
   Genres,
   Description,
@@ -46,10 +44,7 @@ export const MovieInfo = ({
   return (
     <BgContainer bdimage={backdrop_path}>
       <TextContainer>
-        <BackLink to={backRef}>
-          <BackHoverText>Go back</BackHoverText>
-          <BackIcon />
-        </BackLink>
+        <BackLink backRef={backRef} text={'Go back'} />
         <Title>{title}</Title>
         <Genres>
           {release_date && <span>{`(${release_date.split('-')[0]}) `}</span>}

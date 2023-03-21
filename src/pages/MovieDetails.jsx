@@ -3,6 +3,7 @@ import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { fetchAPI } from '../helpers/fetchAPI';
 import { Loader } from '../components/Loader/Loader';
 import { MovieInfo } from '../components/MovieInfo/MovieInfo';
+import { ButtonUp } from '../components/ButtonUp/ButtonUp';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -28,6 +29,7 @@ const MovieDetails = () => {
   return (
     <>
       {isLoading && <Loader />}
+      {window.pageYOffset > 1000 && <ButtonUp />}
       {movie && <MovieInfo backRef={backLinkHref.current} movie={movie} />}
       <Suspense fallback={<Loader />}>
         <Outlet />

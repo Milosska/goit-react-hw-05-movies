@@ -1,10 +1,12 @@
 import { Container, MovieIcon, Text } from './ErrorMessage.styled';
 
-export const ErrorMessage = () => {
+export const ErrorMessage = ({ text, small }) => {
+  const isSmall = small ? 'true' : 'false';
+
   return (
-    <Container>
-      <MovieIcon />
-      <Text>Oops, something went wrong. Please try another request</Text>
+    <Container small={isSmall}>
+      <MovieIcon small={isSmall} />
+      <Text small={isSmall}>{text}</Text>
     </Container>
   );
 };

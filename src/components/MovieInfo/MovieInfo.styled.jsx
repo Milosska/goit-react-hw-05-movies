@@ -7,6 +7,7 @@ export const BgContainer = styled.div`
   width: 100%;
   height: 500px;
   padding: 20px 0;
+  font-size: 14px;
   background-size: contain, 100% 300px;
   background-position: left top, right top;
   background-repeat: no-repeat;
@@ -32,6 +33,7 @@ export const BgContainer = styled.div`
     background-size: contain, 85% 100%;
     padding: 30px 20px;
     height: 600px;
+    font-size: 16px;
     background-image: linear-gradient(
         to left,
         rgba(102, 80, 165, 0.5) 0%,
@@ -66,58 +68,6 @@ export const TextContainer = styled.div`
 
   @media (min-width: 1200px) {
     width: 40%;
-  }
-`;
-
-export const BackLink = styled(Link)`
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  width: 150px;
-  height: 40px;
-  border-radius: 25px;
-  overflow: hidden;
-`;
-
-export const BackIcon = styled(BsFillArrowLeftCircleFill)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 40px;
-  height: 40px;
-  color: rgb(102, 80, 165);
-`;
-
-export const BackHoverText = styled.span`
-  display: none;
-  align-items: center;
-  gap: 20px;
-  width: 150px;
-  height: 40px;
-  padding-left: 5px;
-  background-color: rgb(102, 80, 165);
-  border-radius: 25px;
-  font-size: 16px;
-
-  ::before {
-    display: block;
-    content: '';
-    width: 30px;
-    height: 80%;
-    background-color: #ffffff;
-    border-radius: 25px;
-  }
-
-  transform: translateX(-100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  ${BackLink}:hover &, ${BackLink}:focus & {
-    transform: translateX(0);
-  }
-
-  @media (min-width: 768px) {
-    display: inline-flex;
   }
 `;
 

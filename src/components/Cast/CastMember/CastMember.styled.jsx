@@ -1,3 +1,4 @@
+import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import styled from 'styled-components';
 import * as placeholder from '../../../images/person-placeholder.webp';
 
@@ -73,6 +74,7 @@ export const Card = styled.div`
   }
 
   @media (min-width: 768px) {
+    padding: 15px 20px;
     width: 45vw;
     min-height: 250px;
   }
@@ -114,6 +116,76 @@ export const Character = styled.p`
   color: rgb(195, 173, 255);
 
   @media (min-width: 768px) {
+    font-size: 16px;
+  }
+`;
+
+export const BioBtn = styled.button`
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 5px 10px 5px 10px;
+  border: 2px solid rgb(195, 173, 255);
+  border-radius: 25px;
+  background-color: transparent;
+
+  color: inherit;
+  font-size: 16px;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  :hover,
+  :focus {
+    border: 2px solid rgb(102, 80, 165);
+    background-color: rgb(102, 80, 165);
+  }
+`;
+
+export const ArrowIcon = styled(BsFillArrowLeftCircleFill)`
+  position: relative;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  rotate: 180deg;
+
+  transform: translateX(200%);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  ${BioBtn}:hover &, ${BioBtn}:focus & {
+    transform: translateX(0);
+  }
+
+  @media (min-width: 1200px) {
+    width: 30px;
+    height: 30px;
+  }
+`;
+
+export const Biography = styled.p`
+  max-height: 200px;
+  overflow: auto;
+  font-size: 14px;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 480px) {
+    max-height: 300px;
+    font-size: 16px;
+  }
+
+  @media (min-width: 768px) {
+    max-height: 120px;
+    font-size: 14px;
+  }
+
+  @media (min-width: 1200px) {
+    max-height: 160px;
     font-size: 16px;
   }
 `;

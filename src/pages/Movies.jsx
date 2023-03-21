@@ -58,7 +58,11 @@ const Movies = ({ genres }) => {
         <MovieList movies={movies} genres={genres} setPage={setPage} />
       )}
       {window.pageYOffset > 500 && <ButtonUp />}
-      {isError && <ErrorMessage />}
+      {isError && (
+        <ErrorMessage
+          text={'Oops, something went wrong. Please try another request'}
+        />
+      )}
     </>
   );
 };

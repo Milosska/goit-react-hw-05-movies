@@ -10,6 +10,7 @@ export const fetchAPI = async (endpoint, controllerSignal, ...params) => {
     movie: `/movie/${params[0]}?api_key=${TOKEN}&language=en-US`,
     cast: `/movie/${params[0]}/credits?api_key=${TOKEN}&language=en-US`,
     reviews: '/movies/get-movie-reviews',
+    person: `/person/${params[0]}?api_key=${TOKEN}&language=en-US`,
     genres: `/genre/movie/list?api_key=${TOKEN}&language=en-US`,
   };
 
