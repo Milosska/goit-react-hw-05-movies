@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import styled from 'styled-components';
-import * as placeholder from '../../images/movie-placeholder-min.jpg';
+import * as placeholder from '../../images/big-movie-placholder-min.jpg';
 
 export const BgContainer = styled.div`
   width: 100%;

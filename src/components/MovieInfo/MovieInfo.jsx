@@ -1,5 +1,6 @@
-import { CompaniesList } from '../CompaniesList/CompaniesList';
-import { StatesInfo } from '../StatesInfo/StatesInfo';
+import { useLocation } from 'react-router-dom';
+import { CompaniesList } from './CompaniesList/CompaniesList';
+import { StatesInfo } from './StatesInfo/StatesInfo';
 import {
   BgContainer,
   TextContainer,
@@ -29,6 +30,8 @@ export const MovieInfo = ({
     production_companies,
   },
 }) => {
+  const location = useLocation();
+
   const parseGenres = genres => {
     if (!genres) {
       return 'N/A';
@@ -60,11 +63,11 @@ export const MovieInfo = ({
         />
         <CompaniesList companies={production_companies} />
         <LinkThumb>
-          <CastLink to={'cast'}>
+          <CastLink to={'cast'} state={{ from: location }}>
             <ArrowIcon />
             Cast
           </CastLink>
-          <AddLink to={'reviews'}>
+          <AddLink to={'reviews'} state={{ from: location }}>
             <ArrowIcon />
             Reviews
           </AddLink>

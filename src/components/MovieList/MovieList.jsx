@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { List, ObserverDiv } from './MovieList.styled';
-import { MovieCard } from '../MovieCard/MovieCard';
+import { MovieCard } from './MovieCard/MovieCard';
 
 export const MovieList = ({ movies, genres, setPage }) => {
   const observerRef = useRef();

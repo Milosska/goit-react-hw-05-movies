@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import * as placeholder from '../../images/movie-placeholder-min.jpg';
+import * as placeholder from '../../../images/movie-placeholder-min.jpg';
 
 export const Card = styled(NavLink)`
   position: relative;
@@ -21,7 +21,7 @@ export const Card = styled(NavLink)`
     ),
     ${card => {
       if (!card.bdimage) {
-        return;
+        return `url(${placeholder.default})`;
       }
       return `url(https://image.tmdb.org/t/p/w500${card.bdimage})`;
     }};

@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef, Suspense } from 'react';
+import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { fetchAPI } from '../helpers/fetchAPI';
 import { Loader } from '../components/Loader/Loader';
 import { MovieInfo } from '../components/MovieInfo/MovieInfo';
@@ -29,6 +29,9 @@ const MovieDetails = () => {
     <>
       {isLoading && <Loader />}
       {movie && <MovieInfo backRef={backLinkHref.current} movie={movie} />}
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

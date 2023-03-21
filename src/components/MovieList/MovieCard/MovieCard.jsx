@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
-import { forParseGenres } from '../../helpers/fetchAPI';
+import PropTypes from 'prop-types';
+import { forParseGenres } from '../../../helpers/fetchAPI';
 import {
   Card,
   TextContainer,

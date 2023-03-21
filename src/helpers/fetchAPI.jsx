@@ -8,7 +8,7 @@ export const fetchAPI = async (endpoint, controllerSignal, ...params) => {
     trends: `/trending/movie/day?api_key=${TOKEN}&page=${params[0]}`,
     query: `/search/movie?api_key=${TOKEN}&page=${params[0]}&query=${params[1]}`,
     movie: `/movie/${params[0]}?api_key=${TOKEN}&language=en-US`,
-    cast: '/movies/get-movie-credits',
+    cast: `/movie/${params[0]}/credits?api_key=${TOKEN}&language=en-US`,
     reviews: '/movies/get-movie-reviews',
     genres: `/genre/movie/list?api_key=${TOKEN}&language=en-US`,
   };
