@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { CompaniesList } from './CompaniesList/CompaniesList';
 import { StatesInfo } from './StatesInfo/StatesInfo';
 import { BackLink } from './BackLink/BackLink';
@@ -70,4 +71,14 @@ export const MovieInfo = ({
       </TextContainer>
     </BgContainer>
   );
+};
+
+MovieInfo.propTypes = {
+  movie: PropTypes.shape({
+    backdrop_path: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    release_date: PropTypes.string,
+    genres: PropTypes.arrayOf(PropTypes.object),
+    overview: PropTypes.string,
+  }).isRequired,
 };

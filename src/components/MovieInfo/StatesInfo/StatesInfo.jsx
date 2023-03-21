@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   StatisticContainer,
   StatText,
@@ -31,4 +32,10 @@ export const StatesInfo = ({ popularity, vote_average, status }) => {
       </StatContainer>
     </StatisticContainer>
   );
+};
+
+StatesInfo.propTypes = {
+  popularity: PropTypes.number,
+  vote_average: PropTypes.number,
+  status: PropTypes.string,
 };

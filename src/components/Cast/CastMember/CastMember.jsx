@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { fetchAPI } from '../../../helpers/fetchAPI';
 import { ErrorMessage } from '../../ErrorMessage/ErrorMessage';
 import {
@@ -30,7 +31,6 @@ export const CastMember = ({
       <TextContainer>
         <StarName>{name}</StarName>
         <Character>as {character}</Character>
-        {/* Добавить запрос на биографию по клику на кнопку */}
         {!isShown && (
           <BioBtn type="button" onClick={handleClick}>
             <ArrowIcon />
@@ -45,4 +45,13 @@ export const CastMember = ({
       </TextContainer>
     </Card>
   );
+};
+
+CastMember.propTypes = {
+  actor: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    profile_path: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    character: PropTypes.string,
+  }).isRequired,
 };

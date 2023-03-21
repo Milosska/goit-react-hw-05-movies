@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Container, MovieIcon, Text } from './ErrorMessage.styled';
 
 export const ErrorMessage = ({ text, small }) => {
@@ -9,4 +10,9 @@ export const ErrorMessage = ({ text, small }) => {
       <Text small={isSmall}>{text}</Text>
     </Container>
   );
+};
+
+ErrorMessage.propTypes = {
+  text: PropTypes.string.isRequired,
+  small: PropTypes.bool,
 };

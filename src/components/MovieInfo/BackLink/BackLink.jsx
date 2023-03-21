@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { StyledLink, BackIcon, BackHoverText } from './BackLink.styled';
 
 export const BackLink = ({ section, backRef, text }) => {
@@ -9,4 +10,10 @@ export const BackLink = ({ section, backRef, text }) => {
       <BackIcon section={isSectionElem} />
     </StyledLink>
   );
+};
+
+BackLink.propTypes = {
+  section: PropTypes.bool,
+  backRef: PropTypes.object,
+  text: PropTypes.string.isRequired,
 };

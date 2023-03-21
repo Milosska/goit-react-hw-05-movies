@@ -28,4 +28,5 @@ export const SearchBar = ({ handleSubmit, setSearchParams }) => {
 
 SearchBar.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  setSearchParams: PropTypes.func.isRequired,
 };

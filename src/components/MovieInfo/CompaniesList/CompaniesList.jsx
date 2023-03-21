@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState, useRef } from 'react';
 
 import {
@@ -46,8 +47,6 @@ export const CompaniesList = ({ companies }) => {
 
     // Li animation
     for (var i = 0; i < liElems.length; i += 1) {
-      console.log(liElems[i]);
-
       if (i > 0) {
         if (isClose) {
           liElems[i].style.display = 'flex';
@@ -88,4 +87,8 @@ export const CompaniesList = ({ companies }) => {
       )}
     </>
   );
+};
+
+CompaniesList.propTypes = {
+  companies: PropTypes.arrayOf(PropTypes.object),
 };

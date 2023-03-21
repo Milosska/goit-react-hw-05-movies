@@ -5,7 +5,7 @@ import * as placeholder from '../../images/big-movie-placholder-min.jpg';
 
 export const BgContainer = styled.div`
   width: 100%;
-  height: 500px;
+  min-height: 500px;
   padding: 20px 0;
   font-size: 14px;
   background-size: contain, 100% 300px;
