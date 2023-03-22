@@ -9,6 +9,7 @@ import Movies from '../pages/Movies';
 import MovieDetails from '../pages/MovieDetails';
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
+import Trailers from './Trailers/Trailers';
 
 export const App = () => {
   const [genres, setGenres] = useState([]);
@@ -29,6 +30,7 @@ export const App = () => {
           <Route path="movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
+            <Route path="trailers" element={<Trailers />} />
           </Route>
         </Route>
       </Routes>

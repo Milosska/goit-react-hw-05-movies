@@ -146,6 +146,10 @@ export const AddLink = styled(Link)`
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  :not(:last-child) {
+    margin-right: 20px;
+  }
+
   :hover,
   :focus {
     border: 2px solid rgb(102, 80, 165);
@@ -156,14 +160,6 @@ export const AddLink = styled(Link)`
     margin-top: 30px;
     /* padding: 5px 20px 5px 10px; */
     font-size: 22px;
-  }
-`;
-
-export const CastLink = styled(AddLink)`
-  margin-right: 20px;
-
-  @media (min-width: 1200px) {
-    margin-right: 50px;
   }
 `;
 

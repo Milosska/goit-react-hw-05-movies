@@ -11,7 +11,6 @@ import {
   Description,
   LinkThumb,
   AddLink,
-  CastLink,
   ArrowIcon,
 } from './MovieInfo.styled';
 
@@ -59,13 +58,17 @@ export const MovieInfo = ({
         />
         <CompaniesList companies={production_companies} />
         <LinkThumb>
-          <CastLink to={'cast'} state={{ from: location }}>
+          <AddLink to={'cast'} state={{ from: location }}>
             <ArrowIcon />
             Cast
-          </CastLink>
+          </AddLink>
           <AddLink to={'reviews'} state={{ from: location }}>
             <ArrowIcon />
             Reviews
+          </AddLink>
+          <AddLink to={'trailers'} state={{ from: location }}>
+            <ArrowIcon />
+            Trailers
           </AddLink>
         </LinkThumb>
       </TextContainer>
