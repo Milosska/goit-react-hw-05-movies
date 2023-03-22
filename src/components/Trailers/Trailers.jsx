@@ -30,8 +30,6 @@ const Trailers = () => {
     }
   }, [trailers]);
 
-  console.log(trailers);
-
   return (
     <Container>
       <BackLink

@@ -15,11 +15,19 @@ export const PlayerThumb = styled.div`
   position: relative;
   margin: 20px auto 0;
   width: 100vw;
-  height: 60vh;
+  height: 300px;
+
+  @media (min-width: 480px) {
+    height: 400px;
+  }
 
   @media (min-width: 768px) {
     width: 80vw;
-    height: 80vh;
+  }
+
+  @media (min-width: 1200px) {
+    width: 80vw;
+    height: 600px;
   }
 `;
 
