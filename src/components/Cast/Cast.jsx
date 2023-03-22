@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { fetchAPI } from '../../helpers/fetchAPI';
 import { CastMember } from './CastMember/CastMember';
-import { ButtonUp } from '../ButtonUp/ButtonUp';
 import { BackLink } from '../MovieInfo/BackLink/BackLink';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Container, List } from './Cast.styled';
@@ -36,7 +35,6 @@ const Cast = () => {
       ) : (
         <ErrorMessage text={'Sorry, we don`t have information about cast'} />
       )}
-      <ButtonUp />
     </Container>
   );
 };

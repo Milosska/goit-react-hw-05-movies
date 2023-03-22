@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useWindowScroll } from 'react-use';
 import { fetchAPI } from '../helpers/fetchAPI';
 import { SearchBar } from '../components/SearchBar/SearchBar';
 import { MovieList } from '../components/MovieList/MovieList';
@@ -9,12 +10,12 @@ import { ErrorMessage } from '../components/ErrorMessage/ErrorMessage';
 
 const Movies = ({ genres }) => {
   const [searchParams, setSearchParams] = useSearchParams();
-
   const [query, setQuery] = useState(() => searchParams.get('query') || '');
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setError] = useState(false);
+  const { y } = useWindowScroll();
 
   useEffect(() => {
     if (!query) {
@@ -57,7 +58,7 @@ const Movies = ({ genres }) => {
       {movies && !isError && (
         <MovieList movies={movies} genres={genres} setPage={setPage} />
       )}
-      {window.pageYOffset > 500 && <ButtonUp />}
+      {y > 500 && <ButtonUp />}
       {isError && (
         <ErrorMessage
           text={'Oops, something went wrong. Please try another request'}

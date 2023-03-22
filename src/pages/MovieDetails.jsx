@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, Suspense } from 'react';
 import { useParams, useLocation, Outlet } from 'react-router-dom';
+import { useWindowScroll } from 'react-use';
 import { fetchAPI } from '../helpers/fetchAPI';
 import { Loader } from '../components/Loader/Loader';
 import { MovieInfo } from '../components/MovieInfo/MovieInfo';
@@ -10,6 +11,7 @@ const MovieDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { movieId } = useParams();
   const location = useLocation();
+  const { y } = useWindowScroll();
 
   const backLinkHref = useRef(location.state?.from ?? '/');
 
@@ -29,7 +31,7 @@ const MovieDetails = () => {
   return (
     <>
       {isLoading && <Loader />}
-      {window.pageYOffset > 1000 && <ButtonUp />}
+      {y > 500 && <ButtonUp />}
       {movie && <MovieInfo backRef={backLinkHref.current} movie={movie} />}
       <Suspense fallback={<Loader />}>
         <Outlet />

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useWindowScroll } from 'react-use';
 import { fetchAPI } from '../helpers/fetchAPI';
 import { MovieList } from '../components/MovieList/MovieList';
 import { Loader } from '../components/Loader/Loader';
@@ -8,6 +9,7 @@ const Home = ({ genres }) => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const { y } = useWindowScroll();
 
   useEffect(() => {
     if (page === 0) {
@@ -34,7 +36,7 @@ const Home = ({ genres }) => {
   return (
     <>
       {isLoading && <Loader />}
-      {window.pageYOffset > 500 && <ButtonUp />}
+      {y > 500 && <ButtonUp />}
       <MovieList movies={movies} genres={genres} setPage={setPage} />
     </>
   );

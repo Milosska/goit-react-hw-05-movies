@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { fetchAPI } from '../../helpers/fetchAPI';
 import { ReviewCard } from './ReviewCard/ReviewCard';
-import { ButtonUp } from '../ButtonUp/ButtonUp';
 import { BackLink } from '../MovieInfo/BackLink/BackLink';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Container, List, ObserverDiv } from './Reviews.styled';
@@ -39,7 +38,6 @@ const Reviews = () => {
       ) : (
         <ErrorMessage text={'Sorry, there are no reviews yet'} />
       )}
-      <ButtonUp />
     </Container>
   );
 };
