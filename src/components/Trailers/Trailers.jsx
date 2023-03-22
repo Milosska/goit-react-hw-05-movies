@@ -4,16 +4,11 @@ import { fetchAPI } from '../../helpers/fetchAPI';
 import { BackLink } from '../MovieInfo/BackLink/BackLink';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 
-import {
-  Container,
-  GalleryThumb,
-  BtnThumb,
-  VideoBtnThumb,
-  SmallIframes,
-} from './Trailers.styled';
+import { Container, PlayerThumb, Player } from './Trailers.styled';
 
 const Trailers = () => {
   const [trailers, setTrailers] = useState([]);
+  const [url, setUrl] = useState();
   const { movieId } = useParams();
   const location = useLocation();
   const backLinkHref = useRef(location.state?.from ?? '/movies/:movieId');
@@ -29,9 +24,11 @@ const Trailers = () => {
     };
   }, [movieId]);
 
-  const handleClick = e => {
-    console.log(e.target);
-  };
+  useEffect(() => {
+    if (trailers.length) {
+      setUrl(trailers[0].key);
+    }
+  }, [trailers]);
 
   console.log(trailers);
 
@@ -42,27 +39,18 @@ const Trailers = () => {
         text={'Close trailers'}
         backRef={backLinkHref.current}
       />
+
       {trailers.length ? (
-        <>
-          <GalleryThumb>
-            <BtnThumb onClick={handleClick}>
-              {trailers.map(({ id, key, name }) => {
-                return (
-                  <VideoBtnThumb key={id}>
-                    <SmallIframes
-                      src={`https://www.youtube.com/embed/${key}`}
-                      title={name}
-                      allow="fullscreen"
-                      className="iframes"
-                    />
-                  </VideoBtnThumb>
-                );
-              })}
-            </BtnThumb>
-          </GalleryThumb>
-        </>
+        <PlayerThumb>
+          <Player
+            url={`https://www.youtube.com/watch?v=${url}`}
+            controls={true}
+            width="100%"
+            height="100%"
+          />
+        </PlayerThumb>
       ) : (
-        <ErrorMessage text={'Sorry, video is not avaliable'} />
+        <ErrorMessage text={'Sorry, trailer is not avaliable'} />
       )}
     </Container>
   );

@@ -1,7 +1,9 @@
+import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
+  padding: 20px 0 40px;
   font-size: 22px;
 
   @media (min-width: 1200px) {
@@ -9,36 +11,20 @@ export const Container = styled.div`
   }
 `;
 
-export const GalleryThumb = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 600px;
-  margin-top: 20px;
-  overflow-x: auto;
+export const PlayerThumb = styled.div`
+  position: relative;
+  margin: 20px auto 0;
+  width: 100vw;
+  height: 60vh;
 
-  ::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
-export const BtnThumb = styled.ul`
-  display: flex;
-  padding: 0;
-  list-style: none;
-`;
-
-export const VideoBtnThumb = styled.li`
-  width: 100px;
-  height: auto;
-  outline: 2px solid red;
-`;
-
-export const SmallIframes = styled.iframe`
-  width: 100%;
-  height: 100%;
-
-  &.active {
+  @media (min-width: 768px) {
     width: 80vw;
+    height: 80vh;
   }
+`;
+
+export const Player = styled(ReactPlayer)`
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
