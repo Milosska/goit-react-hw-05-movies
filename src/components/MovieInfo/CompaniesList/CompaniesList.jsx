@@ -60,31 +60,29 @@ export const CompaniesList = ({ companies }) => {
 
   return (
     <>
-      {window.innerWidth > 1199 && (
-        <Container ref={containerRef}>
-          <TitleText>Companies:</TitleText>
-          {prodCompanies.length ? (
-            <List ref={listRef}>
-              {prodCompanies.map(({ logo_path, name, id }) => {
-                return (
-                  <ListElem key={id}>
-                    <LogoContainer>{getLogo(logo_path)}</LogoContainer>
-                    <CompanyName>{name}</CompanyName>
-                  </ListElem>
-                );
-              })}
-            </List>
-          ) : (
-            <TitleText>No info about companies</TitleText>
-          )}
+      <Container ref={containerRef}>
+        <TitleText>Companies:</TitleText>
+        {prodCompanies.length ? (
+          <List ref={listRef}>
+            {prodCompanies.map(({ logo_path, name, id }) => {
+              return (
+                <ListElem key={id}>
+                  <LogoContainer>{getLogo(logo_path)}</LogoContainer>
+                  <CompanyName>{name}</CompanyName>
+                </ListElem>
+              );
+            })}
+          </List>
+        ) : (
+          <TitleText>No info about companies</TitleText>
+        )}
 
-          {companies.length > 1 && (
-            <ArrowBtn type="button" onClick={handleClick}>
-              <ArrowIcon />
-            </ArrowBtn>
-          )}
-        </Container>
-      )}
+        {companies.length > 1 && (
+          <ArrowBtn type="button" onClick={handleClick}>
+            <ArrowIcon />
+          </ArrowBtn>
+        )}
+      </Container>
     </>
   );
 };

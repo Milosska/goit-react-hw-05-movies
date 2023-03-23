@@ -43,5 +43,3 @@ MovieCard.propTypes = {
   }).isRequired,
   genres: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
-
-// https://codepen.io/ryanparag/pen/oWrLPr?editors=1100

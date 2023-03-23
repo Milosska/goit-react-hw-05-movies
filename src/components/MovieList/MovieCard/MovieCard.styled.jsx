@@ -1,8 +1,8 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import * as placeholder from '../../../images/movie-placeholder-min.jpg';
 
-export const Card = styled(NavLink)`
+export const Card = styled(Link)`
   position: relative;
   display: block;
   width: 90vw;

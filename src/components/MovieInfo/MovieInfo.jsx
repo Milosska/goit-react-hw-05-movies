@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import { useMedia } from 'react-use';
 import PropTypes from 'prop-types';
 import { CompaniesList } from './CompaniesList/CompaniesList';
 import { StatesInfo } from './StatesInfo/StatesInfo';
@@ -29,6 +30,9 @@ export const MovieInfo = ({
   },
 }) => {
   const location = useLocation();
+  const isWide = useMedia('(min-width: 1200px)');
+
+  console.log(isWide);
 
   const parseGenres = genres => {
     if (!genres) {
@@ -56,7 +60,7 @@ export const MovieInfo = ({
           vote_average={vote_average}
           status={status}
         />
-        <CompaniesList companies={production_companies} />
+        {isWide && <CompaniesList companies={production_companies} />}
         <LinkThumb>
           <AddLink to={'cast'} state={{ from: location }}>
             <ArrowIcon />
