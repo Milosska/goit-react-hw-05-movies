@@ -1,37 +1,37 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.c3d5249d.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.7760dabc.js",
-    "static/js/415.164477d5.chunk.js": "/goit-react-hw-05-movies/static/js/415.164477d5.chunk.js",
-    "static/js/991.aac21ec3.chunk.js": "/goit-react-hw-05-movies/static/js/991.aac21ec3.chunk.js",
-    "static/js/556.e3a7cd51.chunk.js": "/goit-react-hw-05-movies/static/js/556.e3a7cd51.chunk.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.a0f79e9b.js",
+    "static/js/415.e3cf05e1.chunk.js": "/goit-react-hw-05-movies/static/js/415.e3cf05e1.chunk.js",
+    "static/js/991.e617c696.chunk.js": "/goit-react-hw-05-movies/static/js/991.e617c696.chunk.js",
+    "static/js/556.02cee144.chunk.js": "/goit-react-hw-05-movies/static/js/556.02cee144.chunk.js",
     "static/js/67.b321f7b4.chunk.js": "/goit-react-hw-05-movies/static/js/67.b321f7b4.chunk.js",
     "static/js/994.b35535b0.chunk.js": "/goit-react-hw-05-movies/static/js/994.b35535b0.chunk.js",
     "static/js/402.cd7e452a.chunk.js": "/goit-react-hw-05-movies/static/js/402.cd7e452a.chunk.js",
     "static/js/126.d1dd4126.chunk.js": "/goit-react-hw-05-movies/static/js/126.d1dd4126.chunk.js",
     "static/js/578.10ef88bb.chunk.js": "/goit-react-hw-05-movies/static/js/578.10ef88bb.chunk.js",
     "static/js/710.040bd2bf.chunk.js": "/goit-react-hw-05-movies/static/js/710.040bd2bf.chunk.js",
-    "static/js/56.0486f5c4.chunk.js": "/goit-react-hw-05-movies/static/js/56.0486f5c4.chunk.js",
-    "static/js/732.0754c128.chunk.js": "/goit-react-hw-05-movies/static/js/732.0754c128.chunk.js",
+    "static/js/42.b34e601b.chunk.js": "/goit-react-hw-05-movies/static/js/42.b34e601b.chunk.js",
+    "static/js/188.fae9c9e9.chunk.js": "/goit-react-hw-05-movies/static/js/188.fae9c9e9.chunk.js",
     "static/media/big-movie-placholder-min.jpg": "/goit-react-hw-05-movies/static/media/big-movie-placholder-min.c5a42288c90129558693.jpg",
     "static/media/person-placeholder.webp": "/goit-react-hw-05-movies/static/media/person-placeholder.99f63ae0e2562958f5da.webp",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.c3d5249d.css.map": "/goit-react-hw-05-movies/static/css/main.c3d5249d.css.map",
-    "main.7760dabc.js.map": "/goit-react-hw-05-movies/static/js/main.7760dabc.js.map",
-    "415.164477d5.chunk.js.map": "/goit-react-hw-05-movies/static/js/415.164477d5.chunk.js.map",
-    "991.aac21ec3.chunk.js.map": "/goit-react-hw-05-movies/static/js/991.aac21ec3.chunk.js.map",
-    "556.e3a7cd51.chunk.js.map": "/goit-react-hw-05-movies/static/js/556.e3a7cd51.chunk.js.map",
+    "main.a0f79e9b.js.map": "/goit-react-hw-05-movies/static/js/main.a0f79e9b.js.map",
+    "415.e3cf05e1.chunk.js.map": "/goit-react-hw-05-movies/static/js/415.e3cf05e1.chunk.js.map",
+    "991.e617c696.chunk.js.map": "/goit-react-hw-05-movies/static/js/991.e617c696.chunk.js.map",
+    "556.02cee144.chunk.js.map": "/goit-react-hw-05-movies/static/js/556.02cee144.chunk.js.map",
     "67.b321f7b4.chunk.js.map": "/goit-react-hw-05-movies/static/js/67.b321f7b4.chunk.js.map",
     "994.b35535b0.chunk.js.map": "/goit-react-hw-05-movies/static/js/994.b35535b0.chunk.js.map",
     "402.cd7e452a.chunk.js.map": "/goit-react-hw-05-movies/static/js/402.cd7e452a.chunk.js.map",
     "126.d1dd4126.chunk.js.map": "/goit-react-hw-05-movies/static/js/126.d1dd4126.chunk.js.map",
     "578.10ef88bb.chunk.js.map": "/goit-react-hw-05-movies/static/js/578.10ef88bb.chunk.js.map",
     "710.040bd2bf.chunk.js.map": "/goit-react-hw-05-movies/static/js/710.040bd2bf.chunk.js.map",
-    "56.0486f5c4.chunk.js.map": "/goit-react-hw-05-movies/static/js/56.0486f5c4.chunk.js.map",
-    "732.0754c128.chunk.js.map": "/goit-react-hw-05-movies/static/js/732.0754c128.chunk.js.map"
+    "42.b34e601b.chunk.js.map": "/goit-react-hw-05-movies/static/js/42.b34e601b.chunk.js.map",
+    "188.fae9c9e9.chunk.js.map": "/goit-react-hw-05-movies/static/js/188.fae9c9e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.7760dabc.js"
+    "static/js/main.a0f79e9b.js"
   ]
 }
